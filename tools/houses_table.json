@@ -1,0 +1,533 @@
+{
+  "HousingTest_House0": {
+    "Name": "Test",
+    "Name2": {
+      "Texts": [],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 100
+  },
+  "FirstHouse": {
+    "Name": "First Home",
+    "Name2": {
+      "Texts": [],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 300000
+  },
+  "Gujwa_ContainerHouse": {
+    "Name": "Gu-Jwa Container House",
+    "Name2": {
+      "Texts": [],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 30000,
+    "PlotSize": 2
+  },
+  "GimNyungBeach_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gim-Nyeong",
+        "Beach",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 200000,
+    "PlotSize": 2
+  },
+  "Gujwa_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gu-Jwa",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 500000,
+    "PlotSize": 2
+  },
+  "Oedo_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Oedo",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 50000
+  },
+  "BuildingTest": {
+    "Name": "Building Test 2",
+    "Name2": {
+      "Texts": [],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 1000
+  },
+  "Aewol_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Ae-Wol",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 50000
+  },
+  "CheonJin_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Cheonjin",
+        "House",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 100000,
+    "PlotSize": 2
+  },
+  "CheonJin_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Cheonjin",
+        "House",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 100000,
+    "PlotSize": 2
+  },
+  "Downtown_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Jeju",
+        "House",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 300000
+  },
+  "Downtown_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Jeju",
+        "House",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 280000,
+    "PlotSize": 1
+  },
+  "Downtown_03": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Jeju",
+        "House",
+        "3"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 400000,
+    "PlotSize": 2
+  },
+  "Gapa_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gapa",
+        "House",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 100000,
+    "PlotSize": 1
+  },
+  "Gapa_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gapa",
+        "House",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 50000,
+    "PlotSize": 1
+  },
+  "Hallim_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Hallim",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 80000
+  },
+  "JoCheon_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Jocheon",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 30000,
+    "PlotSize": 1
+  },
+  "Lake_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Lake",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 80000,
+    "PlotSize": 2
+  },
+  "PyoSun_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "PyoSun",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 80000
+  },
+  "SeoGuiPo_WestTown_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Seo-Gui-Po",
+        "West",
+        "TownHouse",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 200000,
+    "PlotSize": 1
+  },
+  "SeoGuiPo_WestTown_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Seo-Gui-Po",
+        "West",
+        "TownHouse",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 350000,
+    "PlotSize": 2
+  },
+  "SinChang_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Sin-Chang",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 100000,
+    "PlotSize": 1
+  },
+  "SungSan_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Sungsan",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 50000
+  },
+  "Gwangjin_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gwangjin",
+        "House",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 300000,
+    "PlotSize": 2
+  },
+  "GwangjinTown_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gwangjin",
+        "TownHouse",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 180000
+  },
+  "GwangjinTown_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gwangjin",
+        "TownHouse",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 250000,
+    "PlotSize": 1
+  },
+  "Biyang_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Biyang",
+        "House",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 150000,
+    "PlotSize": 1
+  },
+  "Biyang_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Biyang",
+        "House",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 300000,
+    "PlotSize": 2
+  },
+  "Sanho_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Sanho",
+        "House",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 300000,
+    "PlotSize": 2
+  },
+  "Sanho_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Sanho",
+        "House",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 150000,
+    "PlotSize": 1
+  },
+  "Dongsan_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Dongsan",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 120000,
+    "PlotSize": 1
+  },
+  "Daejin_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Daejin",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 100000
+  },
+  "Obo_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Obo",
+        "House",
+        "1"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 300000,
+    "PlotSize": 2
+  },
+  "Obo_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Obo",
+        "House",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 300000,
+    "PlotSize": 2
+  },
+  "Gwangjin_02": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gwangjin",
+        "House",
+        "2"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 250000,
+    "PlotSize": 2
+  },
+  "Ara_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Ara",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 200000,
+    "PlotSize": 1
+  },
+  "Gaon_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Gaon",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 200000,
+    "PlotSize": 2
+  },
+  "Baram_01": {
+    "Name": "",
+    "Name2": {
+      "Texts": [
+        "Baram",
+        "House"
+      ],
+      "ArgumentNames": [],
+      "Pattern": "",
+      "FullStringOverride": ""
+    },
+    "Cost": 250000,
+    "PlotSize": 1
+  }
+}

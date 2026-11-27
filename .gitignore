@@ -1,0 +1,11 @@
+# Game assets uploaded for analysis (large, and not part of the mod)
+*.uasset
+*.uexp
+*.ubulk
+*.umap
+Mappings.usmap
+Island.world
+Island.sav.txt
+temp/
+__pycache__/
+*.pyc
