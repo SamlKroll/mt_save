@@ -12,3 +12,5 @@ __pycache__/
 
 # local chunk output
 chunks/
+*.zip
+*.bin

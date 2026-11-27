@@ -49,7 +49,10 @@
 
 `Jeju_World.uexp` из распакованного пака игры (≈293 МБ). Как достать:
 
-1. **Проще всего** — UE4SS + FModel: открыть пак игры, найти
+1. **Быстрый вариант — 2 КБ вместо 293 МБ:** см. `GET_UEXP.md`, там готовый скрипт
+`tools/slice_uexp.py`, который вырезает окно со всеми 35 домами.
+
+**Проще всего** — UE4SS + FModel: открыть пак игры, найти
    `/Game/Maps/Jeju/Jeju_World`, сделать Save/Export — FModel положит
    `.uasset/.uexp/.ubulk`. Нужен AES-ключ (AES Dumpster по `MotorTown-Win64-Shipping.exe`).
 2. Либо `repak unpack` / `UnrealPak` по инструкции из `WHAT_TO_UPLOAD.md`.
