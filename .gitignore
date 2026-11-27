@@ -9,3 +9,6 @@ Island.sav.txt
 temp/
 __pycache__/
 *.pyc
+
+# local chunk output
+chunks/

@@ -1,0 +1,26 @@
+{
+  "start": 242123897,
+  "length": 4222,
+  "umap": "Jeju_World.umap",
+  "uexp_expected": "Jeju_World.uexp",
+  "houses": [
+    {
+      "index": 22343,
+      "name": "GujwaHouse",
+      "rel": 228205231,
+      "size": 117
+    },
+    {
+      "index": 22344,
+      "name": "House_C_UAID_2CF05D790A1C3CDF01",
+      "rel": 228205348,
+      "size": 118
+    },
+    {
+      "index": 22345,
+      "name": "House_C_UAID_2CF05D790A1C3CDF01",
+      "rel": 228205466,
+      "size": 118
+    }
+  ]
+}
