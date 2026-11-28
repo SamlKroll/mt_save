@@ -35,8 +35,13 @@ def main():
         start, length = int(a), int(b)
         page = args.page
         start = (start // page) * page
-        end = min(size, ((start + length + page - 1) // page) * page)
-        ranges.append((start, end))
+        end = ((start + length + page - 1) // page) * page
+        if start >= size:
+            print(f"  warning: window {w} starts past end of file ({start} >= {size}), skipped")
+            continue
+        ranges.append((start, min(size, end)))
+    if not ranges:
+        raise SystemExit("no usable windows: check --window values against the file size")
     ranges.sort()
     merged = []
     for s, e in ranges:

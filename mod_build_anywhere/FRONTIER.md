@@ -84,25 +84,33 @@ python tools\sparsify_uexp.py --uexp Jeju_World.uexp --out sparse.bin
 powershell -ExecutionPolicy Bypass -File tools\push_uexp.ps1 -Source sparse.bin
 ```
 
-### Шаг 3 — я проверяю
+### Шаг 3 — я собираю рецепт патча (`patch.json`, ~15 КБ)
 
 ```bash
 python3 tools/unsparsify.py --sparse assets/sparse.bin --out work/Jeju_World.uexp
-python3 tools/patch_world.py --umap Jeju_World.umap --uexp work/Jeju_World.uexp \
-        --usmap Mappings.usmap --size 20000 --dry-run
+python3 tools/make_patch_recipe.py --window work/Jeju_World.uexp \
+        --window-start 242123897 --umap Jeju_World.umap --usmap Mappings.usmap \
+        --size 20000 --out patch.json
 ```
 
-Покажет реальные `AreaSize` всех 35 домов. Совпадение значений с ванильными
-30×30 / 50×50 подтвердит, что декодер верный.
+На каждый дом приходится 24 байта вектора `AreaSize` плюс 4 байта
+`MaxOutsidePlotDistance` — итого 70 записей. В каждой записан и старый,
+и новый байтовый образ, поэтому патч применим только к той версии игры,
+с которой снят.
 
-### Шаг 4 — собираешь `.pak` сам (одна команда)
+Проверил на синтетическом `.uexp` с реальными смещениями из `.umap`:
+35 домов, 70 записей, применение даёт `AreaSize=(20000, 20000, 5000)`,
+`MaxOutsidePlotDistance=20000`, размер файла не меняется, а подменённый
+байт заставляет применитель отказаться от записи.
+
+### Шаг 4 — применяешь рецепт и собираешь `.pak` (две команды)
 
 ```powershell
-repak pack --version V11 BuildAnywhere_P.pak MotorTown\Content\Maps\
+python tools\apply_patch_recipe.py --uexp Jeju_World.uexp --recipe patch.json
+repak pack --version V11 BuildAnywhere_P.pak MotorTown\
 ```
 
-`Jeju_World.uexp` из `Assets\` не трогается — он уже содержит нужные значения,
-а патч меняет байты на месте. Инструкция: `BUILD_PAK.md`.
+Полная инструкция: `BUILD_PAK.md`.
 
 ## Если проще отдать 2 КБ
 

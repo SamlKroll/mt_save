@@ -11,15 +11,29 @@
 * `Jeju_World.uexp` и `Jeju_World.umap` из распакованного пака игры
 * Python (для патчера)
 
-## 1. Патч значений
+## 1. Патч значений (два пути)
+
+**Путь А — по рецепту (рекомендую).** Если я уже прислал `patch.json`
+(он весит 15 КБ и лежит в репозитории), то искать ничего не надо:
 
 ```powershell
 cd путь\к\mt_save
+python tools\apply_patch_recipe.py --uexp Jeju_World.uexp --recipe patch.json
+```
+
+Скрипт проверит, что байты на диске совпадают с ожидаемыми, сделает
+`Jeju_World.uexp.bak` и перепишет 24 байта на дом. Если игра обновилась
+и значения изменились — он откажется писать и скажет, на каком смещении
+расхождение.
+
+**Путь Б — пересчитать самому.** Нужен полный `.uexp`:
+
+```powershell
 python tools\patch_world.py --umap Jeju_World.umap --uexp Jeju_World.uexp ^
        --usmap Mappings.usmap --size 20000 --out patched
 ```
 
-`--size 20000` = 200 м. Скрипт печатает каждый дом и его старые координаты
+`--size 20000` = 200 м. Печатает каждый дом и его старые координаты
 `AreaSize`, затем пишет в `patched\` исправленные `.umap` и `.uexp`.
 
 Если `Mappings.usmap` под рукой нет, положи рядом `tools\schema.json` —
@@ -32,9 +46,12 @@ python tools\patch_world.py --umap Jeju_World.umap --uexp Jeju_World.uexp ^
 
 ```powershell
 mkdir MotorTown\Content\Maps
-copy patched\Jeju_World.umap MotorTown\Content\Maps\
-copy patched\Jeju_World.uexp MotorTown\Content\Maps\
+copy Jeju_World.umap MotorTown\Content\Maps\          # заголовок не меняется
+copy Jeju_World.uexp MotorTown\Content\Maps\          # уже пропатчен на шаге 1
 ```
+
+`Jeju_World.umap` править не нужно: патч трогает только байты в `.uexp`,
+размеры файлов не меняются, все смещения остаются валидными.
 
 ## 3. Упаковка
 
