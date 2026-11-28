@@ -20,7 +20,27 @@
 **git при этом работает.** Проверил специально: ленивый fetch 21-мегабайтного
 блоба `Jeju_World.ubulk` из свежего клона проходит без проблем.
 
-## Что сделать (2 команды)
+## Что сделать (одна команда)
+
+**Windows (PowerShell), из любой папки:**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File mod_build_anywhere\tools\push_uexp.ps1 -Source C:\path\Jeju_World.uexp
+```
+
+Скрипт сам клонирует репозиторий, при необходимости режет файл на части по
+90 МБ, коммитит в `assets/` и пушит в `main`. Ничего настраивать не надо,
+кроме установленного git.
+
+**Linux / macOS:**
+
+```bash
+bash tools/push_uexp.sh /путь/Jeju_World.uexp
+```
+
+Потом напиши в чат «залил».
+
+## Что сделать вручную (2 команды)
 
 В той же папке, где лежит `Jeju_World.uexp`:
 
