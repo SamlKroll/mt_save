@@ -1,0 +1,77 @@
+# Как собрать `BuildAnywhere_P.pak` самому (5 минут)
+
+В моей песочнице нет упаковщика pak и нет сети до его CDN, поэтому финальную
+сборку делаешь ты. Всё остальное — поиск домов, правка `AreaSize` — уже
+посчитано и проверено.
+
+## 0. Что понадобится
+
+* `repak` — упаковщик UE pak: https://github.com/trumank/repak/releases
+  (один exe, кладёшь в PATH)
+* `Jeju_World.uexp` и `Jeju_World.umap` из распакованного пака игры
+* Python (для патчера)
+
+## 1. Патч значений
+
+```powershell
+cd путь\к\mt_save
+python tools\patch_world.py --umap Jeju_World.umap --uexp Jeju_World.uexp ^
+       --usmap Mappings.usmap --size 20000 --out patched
+```
+
+`--size 20000` = 200 м. Скрипт печатает каждый дом и его старые координаты
+`AreaSize`, затем пишет в `patched\` исправленные `.umap` и `.uexp`.
+
+Если `Mappings.usmap` под рукой нет, положи рядом `tools\schema.json` —
+он уже лежит в репозитории, `usmap.py` подхватит его автоматически.
+`pip install zstandard` нужен только для чтения самого `.usmap`.
+
+Хочешь сначала посмотреть без записи — добавь `--dry-run`.
+
+## 2. Раскладка для пака
+
+```powershell
+mkdir MotorTown\Content\Maps
+copy patched\Jeju_World.umap MotorTown\Content\Maps\
+copy patched\Jeju_World.uexp MotorTown\Content\Maps\
+```
+
+## 3. Упаковка
+
+```powershell
+repak pack --version V11 BuildAnywhere_P.pak MotorTown\
+```
+
+Версию пака бери ту же, что у игры (`repak list MotorTown-Windows.pak` покажет).
+Для UE 5.5 это обычно V11.
+
+## 4. Установка
+
+Положить `BuildAnywhere_P.pak` в:
+
+```
+...\MotorTown\Content\Paks\
+```
+
+Файл с суффиксом `_P` подхватывается как патч поверх основного пака — сам
+`MotorTown-Windows.pak` не трогается, ничего распаковывать в игру не нужно.
+
+## 5. Проверка
+
+Зайди в мир, подойди к своему участку и попробуй поставить объект далеко за
+границей. Если игра не даёт — значит для этого типа постройки выключен
+`bAllowOutsidePlotArea` в таблице зданий `/Game/DataAsset/Buildings`
+(поле `MTBuildingRow`). Тогда нужен ещё и её патч: пришли `Building.uasset`
+и `Building.uexp`, я добавлю правку флага в патчер.
+
+## Если что-то не так
+
+* **Игра падает при загрузке карты** — почти всегда неверная версия пака при
+  упаковке. Пересобери с `--version V11` (или той, что показывает `repak list`).
+* **Значения не изменились** — проверь, что в `Content\Paks` лежит именно
+  `BuildAnywhere_P.pak`, и что рядом нет второго патча, который перекрывает
+  `Jeju_World`.
+* **Работает только у хоста** — так и должно быть: `AreaSize` читает серверная
+  логика. В соло и на своём выделенном сервере всё сработает, на чужом — нет.
+* **Мультиплеер**: если сервер не твой, `.pak` должен стоять и на сервере.
+  Клиентский пак меняет только отрисовку зоны, разрешение даёт сервер.

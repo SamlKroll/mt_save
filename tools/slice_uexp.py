@@ -27,6 +27,8 @@ def main():
     ap.add_argument("--start", type=int, default=DEFAULT_START)
     ap.add_argument("--length", type=int, default=DEFAULT_LENGTH)
     ap.add_argument("--out", default="houses_slice.zip")
+    ap.add_argument("--zip", choices=["yes", "no"], default=None,
+                    help="no = write the raw bytes instead of a zip archive")
     args = ap.parse_args()
 
     src = pathlib.Path(args.uexp)
@@ -41,8 +43,12 @@ def main():
         data = f.read(args.length)
 
     out = pathlib.Path(args.out)
-    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.writestr(f"Jeju_World.uexp[{args.start}:{args.start + args.length}]", data)
+    want_zip = (not out.suffix == ".bin") if args.zip is None else (args.zip == "yes")
+    if want_zip:
+        with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zf:
+            zf.writestr(f"Jeju_World.uexp[{args.start}:{args.start + args.length}]", data)
+    else:
+        out.write_bytes(data)
     print(f"wrote {out} ({out.stat().st_size} bytes, {len(data)} payload bytes)")
 
 

@@ -95,6 +95,14 @@
 
 ---
 
+## Документы
+
+* `FRONTIER.md` — где именно игра проверяет границу участка и почему
+  Blueprint-проект UE 5.5.4 для этого не нужен
+* `UPLOAD_UEXP.md` — как отдать файлы (git, не релизы GitHub)
+* `BUILD_PAK.md` — сборка `BuildAnywhere_P.pak` одной командой `repak pack`
+* `GET_UEXP.md` — быстрый вариант на 2 КБ
+
 ## Pak-вариант (когда будет `.uexp`)
 
 ```bash

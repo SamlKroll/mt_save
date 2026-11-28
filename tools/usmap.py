@@ -26,8 +26,14 @@ types: 0 Byte, 1 Bool, 2 Int, 3 Float, 4 Object, 5 Name, 6 Delegate, 7 Double,
 """
 from __future__ import annotations
 
+import json
+import os
 import struct
-import zstandard
+
+try:
+    import zstandard
+except ImportError:  # Windows without pip: fall back to the extracted schema
+    zstandard = None
 
 MAGIC = b"\xc4\x30"
 
@@ -130,7 +136,28 @@ class Usmap:
         return out
 
 
+def from_schema(path: str) -> Usmap:
+    """Build a Usmap from the JSON written by tools/dump_schema.py."""
+    doc = json.load(open(path))
+    structs = []
+    for name, body in doc["structs"].items():
+        props = [Prop(p["index"], 1, p["name"], tuple(p["type"])) for p in body["props"]]
+        structs.append(Struct(name, body.get("super"), props))
+    enums = {k: [(v, n) for v, n in vals] for k, vals in doc["enums"].items()}
+    return Usmap([], enums, structs, doc.get("usmap_version", 0))
+
+
+SCHEMA_FALLBACK = os.path.join(os.path.dirname(os.path.abspath(__file__)), "schema.json")
+
+
 def load(path: str) -> Usmap:
+    if zstandard is None:
+        if not os.path.exists(SCHEMA_FALLBACK):
+            raise RuntimeError(
+                "zstandard is not installed and tools/schema.json is missing.\n"
+                "Either run: pip install zstandard\n"
+                "or copy tools/schema.json next to this script.")
+        return from_schema(SCHEMA_FALLBACK)
     raw = open(path, "rb").read()
     assert raw[:2] == MAGIC, f"bad usmap magic {raw[:2]!r}"
     r = Reader(raw, 2)
